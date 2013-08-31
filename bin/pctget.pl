@@ -4,6 +4,7 @@ use warnings;
 
 use LWP::Simple;
 use LWP::UserAgent;
+r
 use HTML::TreeBuilder;
 
 use File::Basename;
@@ -44,9 +45,9 @@ sub get_html {
         my $target = $_->attr('href');
         if( $target =~ /\.2chan\.net\/.*\.(jpg|png|gif)$/ ){
             my $file_path = $folder.'/'.basename($target);
-            if (!-d "./file/$file_path") {
+            if (!-f "./file/$file_path") {
                 warn Dumper $target;
-                save_img($target, $file_path );
+            save_img($target, $file_path );
             }
         }
     }
@@ -73,4 +74,5 @@ sub get_catalog {
     }
 
     return @result;
+    r
 }
