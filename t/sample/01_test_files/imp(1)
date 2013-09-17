@@ -1,0 +1,7 @@
+document.write('<scr' + 'ipt src=\"http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=rsb&c=28&pli=7909119&PluID=0&w=468&h=60&ord=1379301268&ncu=$$http://ad.adresult.jp/clk?3,eJydjUFrg0AQhX-NNxFXV9cgPcxGpZVoa7Cl9iKurlET17CaSv31NSQ09z5mmG8ejxlkugxvLN1mpHAsp7YJcxFGBi5NVBBb1V3XRfYGI4vYJlZf2WxuyWXYz.TteBopXEW5yOBPJUByxwRoAluv.n5mh5uTLom4Ef0IxRH-Ly.W6f0ovADMAAfPgc-99ELfp4-Yj7OuXOI-m3dpcIqN9ylaZ.SD2qwPul1a4qgPu6z76rMUUPx48KSqzTSdFRMUI1ir0hrJa60Y22LdxHy11i5qqZ2bNRYsg-BtpZge0RFRDLtkK7di5HLKZSGqoc.FpWdc5g2X.BeHV255,$$\"></scr' + 'ipt>\n<noscript>\n<a href=\"http://ad.adresult.jp/clk?3,eJydjUFrg0AQhX-NNxFXV9cgPcxGpZVoa7Cl9iKurlET17CaSv31NSQ09z5mmG8ejxlkugxvLN1mpHAsp7YJcxFGBi5NVBBb1V3XRfYGI4vYJlZf2WxuyWXYz.TteBopXEW5yOBPJUByxwRoAluv.n5mh5uTLom4Ef0IxRH-Ly.W6f0ovADMAAfPgc-99ELfp4-Yj7OuXOI-m3dpcIqN9ylaZ.SD2qwPul1a4qgPu6z76rMUUPx48KSqzTSdFRMUI1ir0hrJa60Y22LdxHy11i5qqZ2bNRYsg-BtpZge0RFRDLtkK7di5HLKZSGqoc.FpWdc5g2X.BeHV255,http%3A//bs.serving-sys.com/BurstingPipe/adServer.bs%3Fcn%3Dbrd%26FlightID%3D7909119%26Page%3D%26PluID%3D0%26Pos%3D1284520150\" target=\"_blank\"><img src=\"http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=bsr&FlightID=7909119&Page=&PluID=0&Pos=1284520150\" border=0 width=468 height=60></a>\n</noscript>');
+var rm_data = new Object();
+rm_data.creative_id = 22778447;
+rm_data.offer_type = 23;
+rm_data.entity_id = 781347;
+
+if (window.rm_crex_data) {rm_crex_data.push(22778447);}
