@@ -6,20 +6,19 @@ use LWP::Simple;
 use LWP::UserAgent;
 
 use HTML::TreeBuilder;
-
 use File::Basename;
+use Data::Dumper;
 
 use constant BASE_URL => 'http://jun.2chan.net/b/';
 use constant CATE_URL => 'http://jun.2chan.net/b/futaba.php?mode=cat';
 use constant USER_AGENT => 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)';
 
-my $ua;
-my $content;
+my $ua = LWP::UserAgent->new('agent' => USER_AGENT);
 
 while (1) {
-    $ua = LWP::UserAgent->new('agent' => USER_AGENT);
-    $content = $ua->get(CATE_URL)->content;
-    my @item = get_catalog();
+    my $content = $ua->get(CATE_URL)->content;
+    my @item = get_catalog($content);
+
     for (@item) {
         my $url = $_->{url};
         my $d = basename($url);
@@ -28,10 +27,10 @@ while (1) {
         mkdir "./file/$d" if (!-d "./file/$d");
         get_html( $url, $d);
     }
+    undef @item;
     sleep(10 * 60);
 }
 
-use Data::Dumper;
 sub get_html {
     my ($url,$folder) = @_;
     my $tree = HTML::TreeBuilder->new;
@@ -43,10 +42,11 @@ sub get_html {
             my $file_path = $folder.'/'.basename($target);
             if (!-f "./file/$file_path") {
                 warn Dumper $target;
-            save_img($target, $file_path );
+                save_img($target, $file_path );
             }
         }
     }
+    undef $tree;
     # return $content;
 }
 
@@ -56,6 +56,7 @@ sub save_img {
 }
 
 sub get_catalog {
+    my $content = shift;
     my $tree = HTML::TreeBuilder->new;
     $tree->parse($content);
 
@@ -68,6 +69,8 @@ sub get_catalog {
             });
         }
     }
+
+    undef $tree;
 
     return @result;
 }
